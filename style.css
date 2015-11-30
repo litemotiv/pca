@@ -6,217 +6,53 @@ Author:
 Version: 1.0
 Tags: 
 */
+@charset "utf-8";
+
 @font-face {
 	font-family: "fontello";
 	src: url('fonts/fontello.eot');
 	src: url('fonts/fontello.eot?#iefix') format('embedded-opentype'), url('fonts/fontello.woff') format('woff'), url('fonts/fontello.ttf') format('truetype'), url('fonts/fontello.svg') format('svg');
 }
 
-/* ==========================================================================
-   Base
-   ========================================================================== */
-
-/**
- * Remove default margin.
- */
 body {
   margin: 0;
 }
 
-/* ==========================================================================
-   Links
-   ========================================================================== */
-/**
- * Remove the gray background color from active links in IE 10.
- */
 a {
-  background: transparent;
   cursor:pointer;
 }
 
-/**
- * Address `outline` inconsistency between Chrome and other browsers.
- */
-a:focus {
-  outline: thin dotted;
-}
-
-/**
- * Improve readability when focused and also mouse hovered in all browsers.
- */
-a:active,
-a:hover {
-  outline: 0;
-}
-
-/* ==========================================================================
-   Typography
-   ========================================================================== */
-/**
- * Address variable `h1` font-size and margin within `section` and `article`
- * contexts in Firefox 4+, Safari 5, and Chrome.
- */
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
-/**
- * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
- */
-b,
-strong,
-.strong {
-  font-weight: bold;
-}
-
-/**
- * Address styling not present in Safari 5 and Chrome.
- */
-dfn,
-em,
-.em {
-  font-style: italic;
-}
-
-/**
- * Address differences between Firefox and other browsers.
- */
-hr {
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 0;
-}
-
-/* ==========================================================================
-  Lists
-========================================================================== */
-/*
- * Addresses margins set differently in IE6/7.
- */
-dl,
-menu,
-ol,
-ul {
-  margin: 1em 0;
-}
-
-dd {
-  margin: 0;
-}
-
-/*
- * Addresses paddings set differently in IE6/7.
- */
-menu {
-  padding: 0 0 0 40px;
-}
-
-ol,
-ul {
-  padding: 0;
-  list-style-type: none;
-}
-
-/*
- * Corrects list images handled incorrectly in IE7.
- */
-nav ul,
-nav ol {
-  list-style: none;
-  list-style-image: none;
-}
-
-/* ==========================================================================
-  Embedded content
-========================================================================== */
-/**
- * Remove border when inside `a` element in IE 8/9.
- */
 img {
   border: 0;
 }
 
-/**
- * Correct overflow displayed oddly in IE 9.
- */
 svg:not(:root) {
   overflow: hidden;
 }
 
-/* ==========================================================================
-   Figures
-   ========================================================================== */
-/**
- * Address margin not present in IE 8/9 and Safari 5.
- */
-figure {
-  margin: 0;
-}
-
-/* ==========================================================================
-   Forms
-   ========================================================================== */
-/**
- * Define consistent border, margin, and padding.
- */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
 
-/**
- * 1. Correct font family not being inherited in all browsers.
- * 2. Correct font size not being inherited in all browsers.
- * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
- */
 button,
 input,
 select,
 textarea {
   font-family: inherit;
-  /* 1 */
   font-size: 100%;
-  /* 2 */
   margin: 0;
-  /* 3 */
 }
 
-/**
- * Address inconsistent `text-transform` inheritance for `button` and `select`.
- * All other form control elements do not inherit `text-transform` values.
- * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
- * Correct `select` style inheritance in Firefox 4+ and Opera.
- */
-button,
-select {
-  text-transform: none;
-}
-
-/**
- * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
- *    and `video` controls.
- * 2. Correct inability to style clickable `input` types in iOS.
- * 3. Improve usability and consistency of cursor style between image-type
- *    `input` and others.
- */
 button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
-  /* 2 */
   cursor: pointer;
-  /* 3 */
 }
 
-/* ==========================================================================
-   Tables
-   ========================================================================== */
-/**
- * Remove most spacing between table cells.
- */
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -2740,7 +2576,9 @@ label select {
   font-weight: normal;
 }
 .language-selector-splash a:hover, .language-selector-splash a:focus {
-  border-color: #000;
+	background:#eff5f3;
+	border-color:#eff5f3;
+	color:#003866;
 }
 
 .other-languages {
@@ -2756,9 +2594,9 @@ label select {
   font-weight: normal;
   font-style: normal;
 }
-.other-languages a:hover, .other-languages a:focus {
-  color: #000;
-}
+	.other-languages a:hover {
+		text-decoration:underline;
+	}
 .other-languages li,
 .other-languages ul,
 .other-languages span {
