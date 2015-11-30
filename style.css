@@ -6,7 +6,6 @@ Author:
 Version: 1.0
 Tags: 
 */
-
 @font-face {
 	font-family: "fontello";
 	src: url('fonts/fontello.eot');
@@ -95,6 +94,7 @@ body {
  */
 a {
   background: transparent;
+  cursor:pointer;
 }
 
 /**
@@ -1716,7 +1716,7 @@ a.read-more:after {
 [class^="icon-after-"]:after,
 [class*=" icon-after-"]:after,
 .menu-item-has-children > a:after,
-.fold-out-label:before {
+.tabs h6:before {
   font-family: "fontello";
   font-style: normal;
   font-weight: normal;
@@ -1727,8 +1727,6 @@ a.read-more:after {
   text-align: center;
   font-variant: normal;
   text-transform: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 [class^="icon-before-"]:before,
@@ -2044,30 +2042,32 @@ label select {
 .language-selector .sub-menu li a {
   font-weight: normal;
 }
-.language-selector .menu-item-has-children {
-  z-index: 9999;
-}
-.language-selector .menu-item-has-children > a:after {
+
+#other-lang > a:after {
   content: "";
 }
 
-.other-language-open .language-selector .sub-menu {
-  display: block;
-  position: absolute;
-  background: #678a8b;
-}
-.other-language-open .overlay {
-  content: "";
-  position: fixed;
-  z-index: 9000;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  background: rgba(0, 0, 0, 0.5);
-}
-.other-language-open .menu-item-has-children {
-  background: #678a8b;
-}
+	#other-lang ul {
+		position: absolute;
+		background: #678a8b;
+		display:none;
+		z-index:6;
+	}
+	
+		#other-lang.active > ul {
+			display:block;
+		}
+
+	#other-lang.active:before {
+		content: "";
+		position: fixed;
+		z-index: 5;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.5);
+		left:0;
+		top:0;
+	}
 
 /********** LOGO ********* */
 .logo {
@@ -2084,36 +2084,35 @@ label select {
 }
 
 .menu {
-  margin-left: -23px;
+  margin-left: -17px;
 }
-.menu ul {
-  margin: 0;
-}
-.menu li {
-  margin: 0 0.38889em;
-  float: left;
-  list-style: none;
-}
-.menu li.current-menu-item > a {
-  background: #94adae;
-  color: #fff;
-}
-.menu a {
-  color: #133958;
-  text-transform: uppercase;
-  padding: 1em;
-  font-family: "PT Sans", sans-serif;
-  font-style: normal;
-  font-size: 0.88889em;
-  float: left;
-}
-.menu a:hover, .menu a:focus {
-  background: #94adae;
-  color: #fff;
-}
+	.menu ul {
+	  margin: 0;
+	}
+	.menu li {
+	  float: left;
+	  list-style: none;
+	}
+	.menu li.current-menu-item > a {
+	  background: #94adae;
+	  color: #fff;
+	}
+	.menu a {
+	  color: #133958;
+	  text-transform: uppercase;
+	  padding: 1em;
+	  font-family: "PT Sans", sans-serif;
+	  font-style: normal;
+	  font-size: 0.88889em;
+	  float: left;
+	}
+	.menu a:hover, .menu a:focus {
+	  background: #94adae;
+	  color: #fff;
+	}
 @media (max-width: 1200px) {
   .menu a {
-    padding: 1em 0.8em;
+    padding: 1em 17px;
   }
 }
 .menu .aside {
@@ -2382,7 +2381,6 @@ label select {
   left: 0;
   text-align: center;
   width: 100%;
-  z-index: 1000;
 }
 .nav-dots ul {
   margin: 0;
@@ -2435,12 +2433,6 @@ label select {
 .fold-out.open {
   padding-bottom: 2em;
 }
-.fold-out.open .fold-out-label:before {
-  -moz-transform: rotate(0);
-  -ms-transform: rotate(0);
-  -webkit-transform: rotate(0);
-  transform: rotate(0);
-}
 .fold-out.open .fold-out-content {
   display: block;
 }
@@ -2448,31 +2440,34 @@ label select {
   margin: 1em 0;
 }
 
-.fold-out-label {
-  padding: 0.6em 0;
-}
-.fold-out-label:before {
-  content: "";
-  float: left;
-  color: #b7d1d0;
-  font-size: 30px;
-  line-height: 1.08em;
-  margin-right: 0.2em;
-  -moz-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
-  -webkit-transform: rotate(270deg);
-  transform: rotate(270deg);
-}
-.fold-out-label h6 {
-  font-size: 1.77778em;
-  font-style: normal;
-  line-height: 1;
-  margin: 0;
-}
-.fold-out-label h6 a {
-  font-weight: normal;
+.tabs h6 {
+	padding: 0.6em 0;
+	font-size: 1.77778em;
+	font-style: normal;
+	line-height: 1;
+	margin: 0;
+	cursor:pointer;
 }
 
+	.tabs h6:before {
+	  content: "";
+	  float: left;
+	  color: #b7d1d0;
+	  font-size: 30px;
+	  line-height: 1.08em;
+	  margin-right: 0.2em;
+	  -moz-transform: rotate(270deg);
+	  -ms-transform: rotate(270deg);
+	  -webkit-transform: rotate(270deg);
+	  transform: rotate(270deg);
+	}
+
+	.fold-out.open h6:before {
+	  -moz-transform: rotate(0);
+	  -ms-transform: rotate(0);
+	  -webkit-transform: rotate(0);
+	  transform: rotate(0);
+	}
 .fold-out-intro-text {
   font-style: italic;
   margin-left: 2em;
@@ -2491,7 +2486,6 @@ label select {
   left: 0.83333em;
   padding-right: 0.83333em;
   bottom: 5.55556em;
-  z-index: 2;
 }
 .intro-text p {
   font-size: 2.55556em;
