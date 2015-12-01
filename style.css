@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 /*
 Theme Name: PCA
 Theme URI: 
@@ -6,7 +8,6 @@ Author:
 Version: 1.0
 Tags: 
 */
-@charset "utf-8";
 
 @font-face {
 	font-family: "fontello";
@@ -1347,6 +1348,10 @@ ul {
   padding:0;
 }
 
+	.main ul {
+		margin:0 0 1em;
+	}
+
 .main li {
   margin-left: 0;
   list-style: none;
@@ -1355,7 +1360,7 @@ ul {
   content: "•";
   color: #7f9b9c;
   font-size: 1.25em;
-  padding-right: 0.88889em;
+  padding-right: 0.75em;
   line-height: 0.66667;
 }
 
@@ -1499,13 +1504,14 @@ table.three-columns tr:nth-child(even) {
 .staff-table:last-child {
   margin: 0;
 }
-.staff-table td {
-  padding: 0 2em;
-  width: 50%;
+
+.staff-table > div {
+	padding:2em 0;
+	margin:0 2em;
+	width:43%;
+	display:inline-block;
 }
-.staff-table tr:last-child .staff-table-content {
-  border: none;
-}
+
 .staff-table a {
   font-family: "PT Sans", sans-serif;
   font-weight: normal;
@@ -1513,7 +1519,6 @@ table.three-columns tr:nth-child(even) {
 }
 .staff-table .staff-table-content {
   border-bottom: #dde9e9 solid 1px;
-  padding: 2em 0;
 }
 
 /* ==========================================================================
@@ -1962,6 +1967,7 @@ label select {
 }
 
 .slider-nav {
+	display:none;
   position: absolute;
   width: 100%;
   top: 60%;
@@ -1984,6 +1990,7 @@ label select {
 }
 
 .nav-dots {
+	display:none;
   position: absolute;
   bottom: 50px;
   left: 0;
